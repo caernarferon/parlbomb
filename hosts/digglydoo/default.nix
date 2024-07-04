@@ -11,12 +11,11 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   environment.systemPackages = with pkgs; [];
-  services = {
-  xserver.enable = true;
-  desktopManager.plasma6.enable = true;
-  displayManager.sddm = {
+  services.xserver = {
     enable = true;
-  };
+    displayManager.gdm = {
+      enable = true;
+    };
   };
   networking.hostName = "digglydoo";
 

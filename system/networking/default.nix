@@ -3,9 +3,8 @@
 {
   networking = {
     # use quad9 with DNS over TLS
-    nameservers = [ "1.1.1.1" "1.1.0.1" ];
+    nameservers = ["1.1.1.1" "1.1.0.1"];
     firewall.allowedTCPPorts = [57621];
-
 
     networkmanager = {
       enable = true;

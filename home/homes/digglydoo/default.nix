@@ -4,6 +4,15 @@
   inputs,
   ...
 }: {
+  imports = [
+    ../../git.nix
+    ../../gtk.nix
+    ../../programs/hyprland
+    ../../programs/terminal/foot
+    ../../programs/minecraft
+    ../../programs/wayland/walker
+
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "parliamentbomber";
@@ -57,11 +66,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  programs.git = {
-    enable = true;
-    userEmail = "109875196+caernarferon@users.noreply.github.com ";
-    userName = "parliamentbomber"
-  }
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -80,17 +85,18 @@
   #
   nixpkgs = {
     config.allowUnfree = true;
-    config.allowUnfreePredicate = (_: true);
+    config.allowUnfreePredicate = _: true;
 
     config.permittedInsecurePackages = [
       "electron-25.9.0"
     ];
   };
-
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.starship.enable = true;
+
 }

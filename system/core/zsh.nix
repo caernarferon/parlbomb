@@ -7,7 +7,7 @@
 
     zsh = {
       enable = true;
-      autosuggestions.enable = true;
+      enableLsColors = true;
       syntaxHighlighting = {
         enable = true;
         patterns = {"rm -rf *" = "fg=black,bg=red";};

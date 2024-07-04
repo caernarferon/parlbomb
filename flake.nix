@@ -11,6 +11,10 @@
     hyprland = {
       url = "git+https://github.com/hyprwm/hyprland?submodules=1";
     };
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
+    };
     nh = {
       url = "github:viperml/nh";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,9 +22,18 @@
     spicetify = {
       url = "github:the-argus/spicetify-nix";
     };
+    shadower = {
+      url = "github:n3oney/shadower";
+    };
+    walker = {
+      url = "github:abenz1267/walker";
+    };
     matugen = {
       url = "github:InioX/matugen/module";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    prism = {
+      url = "github:prismlauncher/prismlauncher";
     };
   };
 
@@ -47,12 +60,12 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "parliamentbomber@digglydoo" = home-manager.lib.homeManagerConfiguration {
+      "parliamentbomber" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [
-          ./home/home.nix
+          ./home/homes/digglydoo
           inputs.hyprland.homeManagerModules.default
         ];
       };
