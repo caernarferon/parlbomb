@@ -34,7 +34,7 @@ in {
       ];
 
       # wm commands
-      bind = 
+      bind =
         [
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
@@ -46,7 +46,7 @@ in {
           # programs
           "$mod, E, exec, ${guifilebrowser}"
           "$mod, N, exec, ${terminal}"
-          "$mod, SPACE, exec, ${applauncher}"
+          # "$mod, SPACE, exec, ${applauncher}"
           #special workspaces
           "$mod, grave, togglespecialworkspace, discord"
           "$mod, TAB, togglespecialworkspace, spotify"

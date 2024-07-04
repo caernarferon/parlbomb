@@ -21,8 +21,17 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark-BL";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Graphite-pink-Dark";
+      package = pkgs.graphite-gtk-theme.override {
+        themeVariants = ["pink"];
+        colorVariants = ["dark"];
+        # sizeVariants = [ "compact" ];
+        tweaks = [
+          "normal"
+          "rimless"
+          "darker"
+        ];
+      };
     };
   };
   home.sessionVariables.GTK_THEME = "Gruvbox-Dark-BL";

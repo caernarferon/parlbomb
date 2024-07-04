@@ -34,6 +34,7 @@
     };
     prism = {
       url = "github:prismlauncher/prismlauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

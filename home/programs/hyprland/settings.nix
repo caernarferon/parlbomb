@@ -1,31 +1,32 @@
 # ./hyprland.nix
-{ inputs
-, pkgs
-, config
-, ...
+{
+  inputs,
+  pkgs,
+  config,
+  ...
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-   # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
+    # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
     extraConfig = ''
-    
-monitor=DP-3,2560x1440@144,0x0,1
-monitor=DP-2,1920x1080@165,2560x0,1
 
-      animations {
-        enabled = yes
+      monitor=DP-3,2560x1440@144,0x0,1
+      monitor=DP-2,1920x1080@165,2560x0,1
 
-      # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+            animations {
+              enabled = yes
 
-          bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+            # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
-          animation = windows, 1, 10, myBezier, slide
-          animation = windowsOut, 1, 7, default, slide
-          animation = border, 1, 10, default
-          animation = borderangle, 1, 8, default
-          animation = fade, 1, 7, default
-          animation = workspaces, 1, 6, default, slide 
-      }
+                bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+
+                animation = windows, 1, 10, myBezier, slide
+                animation = windowsOut, 1, 7, default, slide
+                animation = border, 1, 10, default
+                animation = borderangle, 1, 8, default
+                animation = fade, 1, 7, default
+                animation = workspaces, 1, 6, default, slide
+            }
     '';
     settings = {
       debug = {

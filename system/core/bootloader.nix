@@ -1,6 +1,6 @@
 {
   boot = {
-    kernelParams = [ "nvidia-drm.fbdev=1" ];
+    kernelParams = ["nvidia-drm.fbdev=1"];
     supportedFilesystems = ["ntfs"];
     loader = {
       systemd-boot.enable = false;

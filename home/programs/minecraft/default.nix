@@ -1,5 +1,9 @@
-{inputs,pkgs,...}:{
-    home.packages = [
-        inputs.prism.packages.${pkgs.system}.prismlauncher
-    ];
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  home.packages = [
+    inputs.prism.packages.${pkgs.system}.prismlauncher
+  ];
 }

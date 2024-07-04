@@ -11,7 +11,6 @@
     ../../programs/terminal/foot
     ../../programs/minecraft
     ../../programs/wayland/walker
-
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -98,5 +97,4 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.starship.enable = true;
-
 }
