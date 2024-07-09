@@ -269,6 +269,27 @@
         "url": "https://github.com/hyprwm/hyprland"
       }
     },
+    "hyprland-contrib": {
+      "inputs": {
+        "nixpkgs": [
+          "hyprland",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1718476555,
+        "narHash": "sha256-fuWpgh8KasByIJWE+xVd37Al0LV5YAn6s871T50qVY0=",
+        "owner": "hyprwm",
+        "repo": "contrib",
+        "rev": "29a8374f4b9206d5c4af84aceb7fb5dff441ea60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "contrib",
+        "type": "github"
+      }
+    },
     "hyprland-protocols": {
       "inputs": {
         "nixpkgs": [
@@ -687,6 +708,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "hyprland-contrib": "hyprland-contrib",
         "matugen": "matugen",
         "nh": "nh",
         "nix-topology": "nix-topology",

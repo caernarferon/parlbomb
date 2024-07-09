@@ -22,7 +22,6 @@ in {
   wayland.windowManager.hyprland = {
     settings = let
       terminal = "${pkgs.alacritty}/bin/alacritty";
-      applauncher = "${inputs.walker.packages.${pkgs.system}.walker}/bin/walker";
       shadower = "${inputs.shadower.packages.${pkgs.system}.shadower}/bin/shadower";
       screenshot = "watershot -s | ${shadower} | wl-copy";
       guifilebrowser = "${pkgs.gnome.nautilus}/bin/nautilus";
@@ -46,7 +45,7 @@ in {
           # programs
           "$mod, E, exec, ${guifilebrowser}"
           "$mod, N, exec, ${terminal}"
-          # "$mod, SPACE, exec, ${applauncher}"
+          "$mod, SPACE, exec, anyrun"
           #special workspaces
           "$mod, grave, togglespecialworkspace, discord"
           "$mod, TAB, togglespecialworkspace, spotify"

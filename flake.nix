@@ -11,6 +11,10 @@
     hyprland = {
       url = "git+https://github.com/hyprwm/hyprland?submodules=1";
     };
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
@@ -46,8 +50,10 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   in {
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    packages.x86_64-linux.torus = pkgs.callPackage ./pkgs/torus;
+    formatter.x86_64-linux = pkgs.alejandra;
     nixosConfigurations = {
       digglydoo = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};

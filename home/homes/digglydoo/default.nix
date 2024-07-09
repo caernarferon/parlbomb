@@ -7,12 +7,16 @@
   imports = [
     ../../git.nix
     ../../gtk.nix
+    ../../zsh.nix
     ../../programs/hyprland
     ../../programs/terminal/foot
     ../../programs/minecraft
     ../../programs/wayland/walker
+    ../../programs/wayland/anyrun
+
     ../../programs/polkit.nix
     ../../services/playerctl
+    ../../.
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

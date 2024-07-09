@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     dconf
     monaspace
@@ -20,12 +25,18 @@
   };
   gtk = {
     enable = true;
+    font = let
+      torus-font = inputs.self.packages.${pkgs.system}.torus {};
+    in {
+      name = "TorusPro";
+      package = torus-font;
+    };
     theme = {
       name = "Graphite-pink-Dark";
       package = pkgs.graphite-gtk-theme.override {
         themeVariants = ["pink"];
         colorVariants = ["dark"];
-        # sizeVariants = [ "compact" ];
+        #sizeVariants = [ "compact" ];
         tweaks = [
           "normal"
           "rimless"
@@ -34,5 +45,5 @@
       };
     };
   };
-  home.sessionVariables.GTK_THEME = "Gruvbox-Dark-BL";
+  xdg.configFile."gtk-4.0/gtk.css".enable = lib.mkForce false;
 }

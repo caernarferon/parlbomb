@@ -9,7 +9,7 @@
       "minsize 1 1, title:^()$,class:^(steam)$"
     ];
     layerrule = let
-      layers = "^(walker|gtk-layer-shell)$";
+      layers = "^(anyrun|gtk-layer-shell)$";
     in [
       "blur, ${layers}"
       "ignorealpha 0.2, ${layers}"

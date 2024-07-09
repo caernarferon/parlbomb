@@ -3,9 +3,8 @@
     ./security.nix
     ./users.nix
     ../nix
-    ../core/zsh.nix
   ];
-
+  programs.zsh.enable = true;
   documentation.dev.enable = true;
 
   time.timeZone = "America/Edmonton";
