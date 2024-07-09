@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./env.nix
     ./binds.nix
     ./execonce.nix
     ./rules.nix
@@ -20,6 +19,9 @@
       enable = true;
     };
   };
+  home.packages = with pkgs; [
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+  ];
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";

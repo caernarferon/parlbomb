@@ -11,6 +11,8 @@
     ../../programs/terminal/foot
     ../../programs/minecraft
     ../../programs/wayland/walker
+    ../../programs/polkit.nix
+    ../../services/playerctl
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
