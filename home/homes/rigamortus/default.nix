@@ -13,7 +13,7 @@
     ../../programs/minecraft
     ../../programs/wayland/walker
     ../../programs/wayland/anyrun
-
+    ../../programs/hyprland/monitors.nix
     ../../programs/polkit.nix
     ../../services/playerctl
     ../../.
@@ -22,7 +22,15 @@
   # manage.
   home.username = "parliamentbomber";
   home.homeDirectory = "/home/parliamentbomber";
-
+  monitors = {
+      "eDP-1" = {
+        width = 1920;
+        height = 1080;
+        refreshRate = 60;
+        x = 0;
+        y = 0;
+      };
+  };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

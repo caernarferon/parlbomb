@@ -13,6 +13,7 @@
     ../../programs/minecraft
     ../../programs/wayland/walker
     ../../programs/wayland/anyrun
+    ../../programs/hyprland/monitors.nix
 
     ../../programs/polkit.nix
     ../../services/playerctl
@@ -22,7 +23,22 @@
   # manage.
   home.username = "parliamentbomber";
   home.homeDirectory = "/home/parliamentbomber";
-
+  monitors = {
+      "DP-2" = {
+        width = 1920;
+        height = 1080;
+        refreshRate = 165;
+        x = 2560;
+        y = 0;
+      };
+      "DP-3" = {
+        width = 2560;
+        height = 1440;
+        refreshRate = 144;
+        x = 0;
+        y = 0;
+      };
+  };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

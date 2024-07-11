@@ -3,6 +3,7 @@
   inputs,
   pkgs,
   config,
+  lib,
   ...
 }: {
   wayland.windowManager.hyprland = {
@@ -10,7 +11,6 @@
     # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
     extraConfig = ''
 
-      monitor=eDP-1,1920x1080@60,0x0,1
 
             animations {
               enabled = yes
@@ -28,6 +28,20 @@
             }
     '';
     settings = {
+
+        monitor =
+          lib.mapAttrsToList
+          (
+            name: m: let
+              resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+              position = "${toString m.x}x${toString m.y}";
+            in "${name},${
+              if m.enabled
+              then "${resolution},${position},1"
+              else "disable"
+            }"
+          )
+          (config.monitors);
       debug = {
         disable_logs = false;
       };
