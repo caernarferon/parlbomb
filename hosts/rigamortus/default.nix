@@ -8,7 +8,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
-    ../../system/hardware/nvidia.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   environment.systemPackages = with pkgs; [];
@@ -18,7 +17,7 @@
       enable = true;
     };
   };
-  networking.hostName = "digglydoo";
+  networking.hostName = "rigamortus";
 
   security.tpm2.enable = true;
 

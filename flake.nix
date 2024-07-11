@@ -78,17 +78,31 @@
           ./hosts/digglydoo
         ];
       };
+      rigamortus = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+        ./hosts/rigamortus
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "parliamentbomber" = home-manager.lib.homeManagerConfiguration {
+      "parliamentbomber@digglydoo" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [
           ./home/homes/digglydoo
+          inputs.hyprland.homeManagerModules.default
+        ];
+      };
+      "parliamentbomber@rigamortus" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/homes/rigamortus
           inputs.hyprland.homeManagerModules.default
         ];
       };

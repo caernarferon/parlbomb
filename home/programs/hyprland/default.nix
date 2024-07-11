@@ -22,7 +22,7 @@
   };
   home.packages = with pkgs; [
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-    inputs.self.packages.${pkgs.system}.wl-ocr
+    #inputs.self.packages.${pkgs.system}.wl-ocr
   ];
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";

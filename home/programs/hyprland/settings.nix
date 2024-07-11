@@ -10,8 +10,7 @@
     # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
     extraConfig = ''
 
-      monitor=DP-3,2560x1440@144,0x0,1
-      monitor=DP-2,1920x1080@165,2560x0,1
+      monitor=eDP-1,1920x1080@60,0x0,1
 
             animations {
               enabled = yes
