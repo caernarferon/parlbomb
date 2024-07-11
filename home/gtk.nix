@@ -25,11 +25,14 @@
   };
   gtk = {
     enable = true;
-    font = let
-      torus-font = inputs.self.packages.${pkgs.system}.torus {};
-    in {
-      name = "TorusPro";
-      package = torus-font;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+    font = {
+      name = "Inter";
+      package = pkgs.google-fonts.override {fonts = ["Inter"];};
+      size = 9;
     };
     theme = {
       name = "Graphite-pink-Dark";

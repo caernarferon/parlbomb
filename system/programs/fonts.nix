@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
@@ -10,6 +14,7 @@
       source-han-sans-japanese
       source-han-serif-japanese
       lexend
+      #inputs.self.packages.${pkgs.system}.torus-pro
 
       (nerdfonts.override {fonts = ["Meslo"];})
     ];

@@ -40,6 +40,19 @@
       url = "github:prismlauncher/prismlauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    Hyprspace = {
+      url = "github:ReshetnikovPavel/Hyprspace";
+      # Hyprspace uses latest Hyprland. We declare this to keep them in sync.
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = {
@@ -52,7 +65,10 @@
     inherit (self) outputs;
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   in {
-    packages.x86_64-linux.torus = pkgs.callPackage ./pkgs/torus;
+    packages.x86_64-linux = {
+      torus-pro = ./pkgs/torus;
+      wl-ocr = ./pkgs/wl-ocr;
+    };
     formatter.x86_64-linux = pkgs.alejandra;
     nixosConfigurations = {
       digglydoo = nixpkgs.lib.nixosSystem {

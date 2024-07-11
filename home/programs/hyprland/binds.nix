@@ -58,7 +58,7 @@ in {
           ", XF86AudioMute,exec, ${pkgs.swayosd}/bin/swayosd-client --output-volume mute-toggle "
           ",XF86AudioNext, exec, playerctl next"
           ", XF86AudioPrev, exec, playerctl previous"
-          #"SUPERSHIFT, SPACE, overview:toggle"
+          "SUPERSHIFT, A, hyprexpo:expo,toggle"
           #clipboard =
           #"$mod, V,
         ]

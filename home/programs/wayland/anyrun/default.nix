@@ -25,7 +25,7 @@
       width.fraction = 0.3;
       y.absolute = 0;
       hidePluginInfo = true;
-      closeOnClick = true;
+      #closeOnClick = true;
       maxEntries = 7;
     };
     extraCss = ''

@@ -3,6 +3,7 @@
     ./security.nix
     ./users.nix
     ../nix
+    ./ssh.nix
   ];
   programs.zsh.enable = true;
   documentation.dev.enable = true;
