@@ -1,5 +1,5 @@
 final: prev: {
-  torus = prev.callPackage ../pkgs/torus { };
+  torus = prev.callPackage ../pkgs/torus {};
 
-  wl-ocr = prev.callPackage ../pkgs/wl-ocr { };
+  wl-ocr = prev.callPackage ../pkgs/wl-ocr {};
 }

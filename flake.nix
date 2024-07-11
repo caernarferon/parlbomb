@@ -2,7 +2,7 @@
   description = "my computers";
 
   inputs = {
-    nix-topology.url = "github:oddlama/nix-topology";
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -81,7 +81,8 @@
       rigamortus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-        ./hosts/rigamortus
+          ./hosts/rigamortus
+          inputs.nix-topology.nixosModules.default
         ];
       };
     };
