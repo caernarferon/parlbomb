@@ -25,6 +25,9 @@
     #inputs.self.packages.${pkgs.system}.wl-ocr
     clipse
     wl-clipboard
+    swayosd
+    nautilus
+    alacritty
   ];
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
