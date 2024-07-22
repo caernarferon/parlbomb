@@ -1,6 +1,9 @@
-{
+{pkgs, ...}: {
   boot = {
-    kernelParams = ["nvidia-drm.fbdev=1"];
+    kernelParams = [
+      "nvidia-drm.fbdev=1"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    ];
     supportedFilesystems = ["ntfs"];
     loader = {
       systemd-boot.enable = false;

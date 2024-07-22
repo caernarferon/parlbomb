@@ -12,36 +12,35 @@
     extraConfig = ''
 
 
-            animations {
-              enabled = yes
+      animations {
+        enabled = yes
 
-            # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+      # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
-                bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+          bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
-                animation = windows, 1, 10, myBezier, slide
-                animation = windowsOut, 1, 7, default, slide
-                animation = border, 1, 10, default
-                animation = borderangle, 1, 8, default
-                animation = fade, 1, 7, default
-                animation = workspaces, 1, 6, default, slide
-            }
+          animation = windows, 1, 10, myBezier, slide
+          animation = windowsOut, 1, 7, default, slide
+          animation = border, 1, 10, default
+          animation = borderangle, 1, 8, default
+          animation = fade, 1, 7, default
+          animation = workspaces, 1, 6, default, slide
+      }
     '';
     settings = {
-
-        monitor =
-          lib.mapAttrsToList
-          (
-            name: m: let
-              resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
-              position = "${toString m.x}x${toString m.y}";
-            in "${name},${
-              if m.enabled
-              then "${resolution},${position},1"
-              else "disable"
-            }"
-          )
-          (config.monitors);
+      monitor =
+        lib.mapAttrsToList
+        (
+          name: m: let
+            resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+            position = "${toString m.x}x${toString m.y}";
+          in "${name},${
+            if m.enabled
+            then "${resolution},${position},1"
+            else "disable"
+          }"
+        )
+        (config.monitors);
       debug = {
         disable_logs = false;
       };
