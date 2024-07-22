@@ -39,7 +39,7 @@ in {
           "$mod, F, fullscreen"
           "$mod, R, togglesplit"
           "$mod, P, pseudo"
-          "$mod, O, togglefloat"
+          "$mod, O, togglefloating"
           "$mod, V, exec,  foot --class clipse -e 'clipse'"
           "$mod SHIFT, F, fullscreen,1"
           "ALT, TAB, cyclenext"
