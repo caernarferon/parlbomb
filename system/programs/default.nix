@@ -13,6 +13,6 @@
 
     kdeconnect.enable = true;
 
-    # seahorse.enable = true;
+    seahorse.enable = true;
   };
 }

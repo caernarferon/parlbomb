@@ -13,6 +13,7 @@
     ../../programs/minecraft
     ../../programs/wayland/walker
     ../../programs/wayland/anyrun
+    ../../programs/wayland/waybar
     ../../programs/hyprland/monitors.nix
 
     ../../programs/polkit.nix

@@ -18,7 +18,6 @@
         translate
         symbols
         stdin
-        randr
         dictionary
       ];
 

@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   services = {
+    gnome.gnome-keyring.enable = true;
     dbus.implementation = "broker";
 
     # profile-sync-daemon

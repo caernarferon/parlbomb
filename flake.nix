@@ -86,10 +86,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/rigamortus
-<<<<<<< HEAD
-          inputs.nix-topology.nixosModules.default
-=======
->>>>>>> refs/remotes/origin/main
         ];
       };
     };
