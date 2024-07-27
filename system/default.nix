@@ -1,7 +1,6 @@
 {
   imports = [
-    ./core/bootloader.nix
-    ./core/default.nix
+    ./core
 
     ./hardware/graphics.nix
     # ./hardware/nvidia.nix

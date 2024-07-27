@@ -9,8 +9,8 @@
     ./hardware-configuration.nix
     ../../system
     ../../system/hardware/nvidia.nix
+    ../../system/core/lanzaboote.nix
   ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   environment.systemPackages = with pkgs; [];
   services.xserver = {
     enable = true;

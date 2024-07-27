@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../system/core/bootloader.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   environment.systemPackages = with pkgs; [];
