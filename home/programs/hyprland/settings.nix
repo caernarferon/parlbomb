@@ -76,6 +76,9 @@
       xwayland = {
         force_zero_scaling = true;
       };
+      render = {
+        explicit_sync = false;
+      };
       misc = {
         vrr = 2;
         close_special_on_empty = true;

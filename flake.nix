@@ -2,8 +2,10 @@
   description = "my computers";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    eww = {
+      url = "github:elkowar/eww";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,15 +35,8 @@
     shadower = {
       url = "github:n3oney/shadower";
     };
-    walker = {
-      url = "github:abenz1267/walker";
-    };
     matugen = {
       url = "github:InioX/matugen/module";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    prism = {
-      url = "github:prismlauncher/prismlauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anyrun = {
@@ -69,10 +64,6 @@
     inherit (self) outputs;
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   in {
-    packages.x86_64-linux = {
-      torus-pro = ./pkgs/torus;
-      wl-ocr = ./pkgs/wl-ocr;
-    };
     formatter.x86_64-linux = pkgs.alejandra;
     nixosConfigurations = {
       digglydoo = nixpkgs.lib.nixosSystem {

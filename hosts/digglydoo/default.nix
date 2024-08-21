@@ -11,7 +11,8 @@
     ../../system/hardware/nvidia.nix
     ../../system/core/lanzaboote.nix
   ];
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+  ];
   services.xserver = {
     enable = true;
     displayManager.gdm = {

@@ -10,7 +10,6 @@
     ../../zsh.nix
     ../../programs/hyprland
     ../../programs/terminal/foot
-    ../../programs/minecraft
     ../../programs/wayland/walker
     ../../programs/wayland/anyrun
     ../../programs/wayland/waybar

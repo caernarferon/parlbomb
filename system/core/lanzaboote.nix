@@ -1,20 +1,24 @@
-{ pkgs
-, config
-, inputs
-, lib
-, ...
+{
+  pkgs,
+  config,
+  inputs,
+  lib,
+  ...
 }: {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
   ];
   boot = {
+    extraModprobeConfig = ''
+      options iwlwifi 11n_disable=8
+    '';
     kernelPackages = pkgs.pkgs.linuxPackages_latest;
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = ["kvm-intel"];
     kernelParams = [
       "nvidia-drm.fbdev=1"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     ];
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
     loader = {
       timeout = 15;
       systemd-boot = {

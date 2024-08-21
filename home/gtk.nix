@@ -27,7 +27,7 @@
     enable = true;
     iconTheme = {
       name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
     };
     font = {
       name = "Inter";
@@ -48,5 +48,4 @@
       };
     };
   };
-  xdg.configFile."gtk-4.0/gtk.css".enable = lib.mkForce false;
 }

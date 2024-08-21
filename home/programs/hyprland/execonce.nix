@@ -6,6 +6,7 @@
   wayland.windowManager.hyprland = {
     settings = {
       exec-once = [
+        "${pkgs.waybar}/bin/waybar"
         "${pkgs.spotify}/bin/spotify"
         "${pkgs.webcord-vencord}/bin/webcord"
         "${pkgs.swww}/bin/swww init"

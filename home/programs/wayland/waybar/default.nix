@@ -3,8 +3,6 @@
   config,
   ...
 }: let
-  scripts = import ./scripts.nix {inherit pkgs;};
-
   workspaces = {
     format = "{icon}";
     format-icons = {
@@ -32,12 +30,10 @@
       "network"
       "bluetooth"
       "pulseaudio#microphone"
-      "custom/battery"
-      "clock"
       "tray"
     ];
     modules-center = [
-      "mpris"
+      "clock"
     ];
 
     "wlr/workspaces" = workspaces;
@@ -87,31 +83,11 @@
         on-scroll = 1;
         weeks-pos = "right";
       };
-      format = "󰥔 {:%H:%M}";
+      format = "{:%I:%M %p}";
       format-alt = "󰥔 {:%A, %B %d, %Y (%R)} ";
       tooltip-format = ''
         <span size='9pt' font='WenQuanYi Zen Hei Mono'>{calendar}</span>'';
     };
-
-    cpu = {
-      format = "󰍛 {usage}%";
-      format-alt = "{icon0}{icon1}{icon2}{icon3}";
-      format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-      interval = 10;
-    };
-
-    "custom/battery" = {
-      exec = "${scripts.battery}/bin/script";
-      format = " 󰁹 {}";
-      interval = 10;
-    };
-
-    "custom/gpu-usage" = {
-      exec = "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits";
-      format = "{}";
-      interval = 10;
-    };
-
     "custom/logo" = {
       exec = "echo ' '";
       format = "{}";
@@ -125,14 +101,6 @@
       };
       separate-outputs = true;
     };
-
-    "hyprland/language" = {
-      format = " {}";
-      format-uk = "державна";
-      format-en = "english";
-      format-ru = "русский";
-    };
-
     memory = {
       format = "󰾆 {percentage}%";
       format-alt = "󰾅 {used}GB";
@@ -146,7 +114,7 @@
       format-disconnected = " Disconnected";
       format-ethernet = "󱘖 Wired";
       format-linked = "󱘖 {ifname} (No IP)";
-      format-wifi = "󰤨 {essid}";
+      format-wifi = "󰤨   {essid}";
       interval = 5;
       max-length = 30;
       tooltip-format = "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}";
@@ -193,7 +161,7 @@
     * {
         border: none;
         border-radius: 0px;
-        font-family: "JetBrainsMono Nerd Font";
+        font-family: "Torus Pro";
         font-weight: bold;
         font-size: 14px;
         min-height: 0px;

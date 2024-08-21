@@ -26,6 +26,7 @@
     clipse
     wl-clipboard
     swayosd
+    swww
     nautilus
     alacritty
   ];
