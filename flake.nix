@@ -30,7 +30,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify = {
-      url = "github:the-argus/spicetify-nix";
+      url = "github:gerg-l/spicetify-nix";
     };
     shadower = {
       url = "github:n3oney/shadower";
@@ -52,6 +52,10 @@
       # Hyprspace uses latest Hyprland. We declare this to keep them in sync.
       inputs.hyprland.follows = "hyprland";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -64,6 +68,19 @@
     inherit (self) outputs;
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   in {
+    devShells.x86_64-linux.default = pkgs.mkShell {
+      packages = with pkgs; [
+        cargo
+        clippy
+        pre-commit
+        rust-analyzer
+        rustc
+        rustfmt
+        rustPackages.clippy
+      ];
+
+      RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
+    };
     formatter.x86_64-linux = pkgs.alejandra;
     nixosConfigurations = {
       digglydoo = nixpkgs.lib.nixosSystem {

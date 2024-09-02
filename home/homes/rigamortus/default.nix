@@ -16,6 +16,9 @@
     ../../programs/hyprland/monitors.nix
     ../../programs/polkit.nix
     ../../services/playerctl
+    ../../services/udiskie
+    ../../programs/spotify
+    ../../dev
     ../../.
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -99,7 +102,9 @@
   nixpkgs = {
     config.allowUnfree = true;
     config.allowUnfreePredicate = _: true;
-
+    overlays = [
+      (import ../../../overlays/default.nix)
+    ];
     config.permittedInsecurePackages = [
       "electron-25.9.0"
     ];

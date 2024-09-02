@@ -29,7 +29,7 @@
       "hyprland/language"
       "network"
       "bluetooth"
-      "pulseaudio#microphone"
+      "pulseaudio"
       "tray"
     ];
     modules-center = [
@@ -117,7 +117,7 @@
       format-wifi = "󰤨   {essid}";
       interval = 5;
       max-length = 30;
-      tooltip-format = "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}";
+      tooltip-format = "󱘖  {ipaddr}   {bandwidthUpBytes}   {bandwidthDownBytes}";
     };
 
     pulseaudio = {

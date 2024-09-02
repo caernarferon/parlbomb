@@ -13,9 +13,12 @@
     ../../programs/wayland/anyrun
     ../../programs/wayland/waybar
     ../../programs/hyprland/monitors.nix
-
+    ../../programs/spotify
     ../../programs/polkit.nix
+    ../../programs/xdg.nix
     ../../services/playerctl
+    ../../services/udiskie
+    ../../dev
     ../../.
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -54,6 +57,7 @@
     google-chrome
     firefox
     vscode
+    prismlauncher
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -106,15 +110,13 @@
   nixpkgs = {
     config.allowUnfree = true;
     config.allowUnfreePredicate = _: true;
-
+    overlays = [
+      (import ../../../overlays/default.nix)
+    ];
     config.permittedInsecurePackages = [
       "electron-25.9.0"
     ];
   };
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.starship.enable = true;

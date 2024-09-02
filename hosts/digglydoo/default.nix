@@ -1,7 +1,6 @@
 {
   pkgs,
-  self,
-  # inputs,
+  config,
   lib,
   ...
 }: {
@@ -17,8 +16,12 @@
     enable = true;
     displayManager.gdm = {
       enable = true;
+      wayland = true;
     };
   };
+
+  # unlock GPG keyring on login
+  security.pam.services.greetd.enableGnomeKeyring = true;
   networking.hostName = "digglydoo";
 
   security.tpm2.enable = true;

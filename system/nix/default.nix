@@ -30,7 +30,7 @@
       # for direnv GC roots
       keep-derivations = true;
       keep-outputs = true;
-
+      warn-dirty = false;
       trusted-users = ["root" "@wheel"];
     };
   };

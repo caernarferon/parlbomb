@@ -1,17 +1,18 @@
 {pkgs, ...}: {
   services = {
-    gnome.gnome-keyring.enable = true;
-    dbus.implementation = "broker";
-
-    # profile-sync-daemon
+    gnome.gnome-keyring = {
+      enable = true;
+    };
+    dbus = {
+      packages = with pkgs; [dconf gcr gnome.gnome-settings-daemon udisks2];
+      implementation = "broker";
+      enable = true;
+    };
+    irqbalance.enable = true;
     psd = {
       enable = true;
       resyncTimer = "10m";
     };
-
-    udev.extraRules = ''
-      # add my android device to adbusers
-      SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", MODE="0666", GROUP="adbusers"
-    '';
+    gvfs.enable = true;
   };
 }

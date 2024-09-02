@@ -6,7 +6,6 @@
 }: {
   home.packages = with pkgs; [
     dconf
-    monaspace
   ];
 
   dconf = {
@@ -30,8 +29,8 @@
       package = pkgs.adwaita-icon-theme;
     };
     font = {
-      name = "Inter";
-      package = pkgs.google-fonts.override {fonts = ["Inter"];};
+      name = "Torus Pro";
+      package = pkgs.torus;
       size = 9;
     };
     theme = {
