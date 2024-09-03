@@ -1,6 +1,7 @@
 {
   imports = [
     ./fonts.nix
+    ./syncthing.nix
     ./home-manager.nix
     ./steam.nix
     ./hyprland.nix

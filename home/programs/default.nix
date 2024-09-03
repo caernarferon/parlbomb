@@ -1,11 +1,10 @@
 {
-    imports = [
-        ./hyprland
-        ./spotify
-        ./terminal
-        ./wayland
-        ./git
-        ./polkit.nix
-        ./xdg.nix
-    ]
+  imports = [
+    ./hyprland
+    ./spotify
+    ./terminal/foot
+    ./git
+    ./polkit.nix
+    ./xdg.nix
+  ];
 }

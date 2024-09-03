@@ -8,6 +8,8 @@
     ./execonce.nix
     ./rules.nix
     ./settings.nix
+    ../wayland/anyrun
+    ../wayland/waybar
   ];
   wayland.windowManager.hyprland = {
     enable = true;

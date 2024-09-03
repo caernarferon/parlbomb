@@ -8,6 +8,7 @@
     ./networking/avahi.nix
     ./networking/default.nix
     ./networking/tailscale.nix
+    ./networking/syncthing.nix
     ./services
     ./services/pipewire.nix
     ./services/location.nix

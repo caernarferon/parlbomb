@@ -1,7 +1,6 @@
 {
-    imports = [
-        ./playerctl
-        ./syncthing
-        ./udiskie
-    ]
+  imports = [
+    ./playerctl
+    ./udiskie
+  ];
 }

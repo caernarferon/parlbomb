@@ -5,12 +5,11 @@
   ...
 }: {
   imports = [
-    ../../git.nix
     ../../gtk.nix
     ../../zsh.nix
     ../../programs
     ../../programs/hyprland/monitors.nix
-    ../../services/
+    ../../services
     ../../dev
     ../../.
   ];

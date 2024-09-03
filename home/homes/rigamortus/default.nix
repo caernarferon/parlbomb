@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    ../../git.nix
     ../../gtk.nix
     ../../zsh.nix
     ../../programs
