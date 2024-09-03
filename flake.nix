@@ -2,6 +2,7 @@
   description = "my computers";
 
   inputs = {
+    agenix.url = "github:ryantm/agenix";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     eww = {
       url = "github:elkowar/eww";
