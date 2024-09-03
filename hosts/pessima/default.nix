@@ -24,5 +24,8 @@
 
   services = {
     fstrim.enable = true;
+    logind.extraConfig = ''
+      HandlePowerKey=suspend
+    '';
   };
 }
