@@ -8,16 +8,9 @@
     ../../git.nix
     ../../gtk.nix
     ../../zsh.nix
-    ../../programs/hyprland
-    ../../programs/terminal/foot
-    ../../programs/wayland/walker
-    ../../programs/wayland/anyrun
-    ../../programs/wayland/waybar
+    ../../programs
     ../../programs/hyprland/monitors.nix
-    ../../programs/polkit.nix
-    ../../services/playerctl
-    ../../services/udiskie
-    ../../programs/spotify
+    ../../services/
     ../../dev
     ../../.
   ];
