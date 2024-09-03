@@ -18,7 +18,7 @@
       enable = true;
     };
   };
-  networking.hostName = "rigamortus";
+  networking.hostName = "pessima";
 
   security.tpm2.enable = true;
 

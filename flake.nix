@@ -90,10 +90,10 @@
           ./hosts/digglydoo
         ];
       };
-      rigamortus = nixpkgs.lib.nixosSystem {
+      pessima = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/rigamortus
+          ./hosts/pessima
         ];
       };
     };
@@ -110,11 +110,11 @@
           inputs.hyprland.homeManagerModules.default
         ];
       };
-      "parliamentbomber@rigamortus" = home-manager.lib.homeManagerConfiguration {
+      "parliamentbomber@pessima" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./home/homes/rigamortus
+          ./home/homes/pessima
           inputs.hyprland.homeManagerModules.default
         ];
       };
