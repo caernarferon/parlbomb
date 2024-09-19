@@ -21,7 +21,6 @@
   networking.hostName = "pessima";
 
   security.tpm2.enable = true;
-
   services = {
     fstrim.enable = true;
     logind.extraConfig = ''

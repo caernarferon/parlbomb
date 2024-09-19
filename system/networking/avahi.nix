@@ -1,7 +1,7 @@
 {
   # network discovery, mDNS
   services.avahi = {
-    openFirewall  = true;
+    openFirewall = true;
     enable = true;
     nssmdns4 = true;
     publish = {

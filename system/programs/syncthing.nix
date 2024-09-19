@@ -1,5 +1,9 @@
-{inputs, config, ...}: {
-  imports = [ inputs.agenix.nixosModules.default ];
+{
+  inputs,
+  config,
+  ...
+}: {
+  imports = [inputs.agenix.nixosModules.default];
   services = {
     syncthing = {
       enable = true;

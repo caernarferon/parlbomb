@@ -12,6 +12,7 @@
     ./services
     ./services/pipewire.nix
     ./services/location.nix
+    ./services/printing.nix
     ./programs
   ];
 
