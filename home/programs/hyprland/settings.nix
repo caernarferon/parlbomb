@@ -77,7 +77,7 @@
         force_zero_scaling = true;
       };
       render = {
-        explicit_sync = false;
+        explicit_sync = true;
       };
       misc = {
         vrr = 2;
