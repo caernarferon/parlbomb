@@ -2,6 +2,7 @@
   imports = [
     ./fonts.nix
     ./syncthing.nix
+    ./dropbox.nix
     ./home-manager.nix
     ./steam.nix
     ./hyprland.nix

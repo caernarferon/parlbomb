@@ -23,6 +23,11 @@
     gtk.enable = true;
   };
   gtk = {
+    cursorTheme = {
+      name = "macOS-Monterey";
+      package = pkgs.apple-cursor;
+      size = 22;
+    };
     enable = true;
     iconTheme = {
       name = "Adwaita";

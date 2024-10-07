@@ -44,6 +44,9 @@
       debug = {
         disable_logs = false;
       };
+      cursor = {
+        no_hardware_cursors = true;
+      };
       general = {
         resize_on_border = true;
         hover_icon_on_border = false;

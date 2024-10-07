@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  services.ratbagd.enable = true;
   hardware.bluetooth = {
     enable = true;
     package = pkgs.bluez5-experimental;
