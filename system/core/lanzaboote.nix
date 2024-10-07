@@ -15,7 +15,7 @@
     kernelPackages = pkgs.pkgs.linuxPackages_latest;
     kernelModules = ["kvm-intel"];
     kernelParams = [
-      "nvidia-drm.fbdev=1"
+      "nvidia_drm.fbdev=1"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     ];
     supportedFilesystems = ["ntfs"];

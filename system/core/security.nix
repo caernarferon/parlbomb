@@ -47,6 +47,7 @@
   security = {
     # userland niceness
     rtkit.enable = true;
+    pam.services.hyprlock.text = "auth include login";
 
     # don't ask for password for wheel group
     sudo.wheelNeedsPassword = false;

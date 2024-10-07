@@ -4,7 +4,8 @@
       "float, class:^(imv)$"
       "workspace special:discord silent,class:^(WebCord)$"
       "workspace special:discord silent,class:^(discord)$"
-      "workspace special:spotify silent,title:^(Spotify Free)$"
+      "workspace special:spotify silent,title:^(Spotify)$"
+
       "stayfocused, title:^()$,class:^(steam)$"
       "minsize 1 1, title:^()$,class:^(steam)$"
       "float,class:(clipse)" # ensure you have a floating window class set if you want this behaviour
