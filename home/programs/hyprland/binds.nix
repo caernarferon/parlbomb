@@ -48,9 +48,10 @@ in {
           "$mod, N, exec, alacritty"
           "$mod, SPACE, exec, anyrun"
           #special workspaces
-          "$mod, grave, togglespecialworkspace, discord"
-          "$mod, TAB, togglespecialworkspace, spotify"
-          "$mod, M, togglespecialworkspace, dropdown"
+          "$mod, grave, exec, pgrep discord && hyprctl dispatch togglespecialworkspace discord || discord &"
+          "$mod, tab, exec, pgrep spotify && hyprctl dispatch togglespecialworkspace spotify || spotify &"
+          "$mod, M, exec, pgrep qalculate-gtk && hyprctl dispatch togglespecialworkspace calculator || qalculate-gtk &"
+
           # screenshotting
           "$mod, S, exec, grimblast copysave area"
           #volume

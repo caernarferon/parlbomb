@@ -10,15 +10,9 @@
     enable = true;
     # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
     extraConfig = ''
-
-
       animations {
-        enabled = yes
-
-      # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
-
+        enabled = false
           bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-
           animation = windows, 1, 10, myBezier, slide
           animation = windowsOut, 1, 7, default, slide
           animation = border, 1, 10, default
@@ -50,11 +44,9 @@
       general = {
         resize_on_border = true;
         hover_icon_on_border = false;
-        gaps_in = 3;
-        gaps_out = 12;
-        border_size = 2;
-        "col.active_border" = "rgb(F06292)";
-        no_border_on_floating = true;
+        gaps_in = 0;
+        gaps_out = 0;
+        border_size = 0;
         layout = "dwindle";
       };
       input = {
@@ -62,6 +54,9 @@
         kb_layout = "us";
         touchpad = {
           natural_scroll = true;
+          disable_while_typing = false;
+          drag_lock = true;
+          clickfinger_behavior = true;
         };
         sensitivity = 0;
       };
@@ -69,7 +64,13 @@
         workspace_swipe = true;
       };
       decoration = {
-        rounding = 15;
+        rounding = 0;
+        blur = {
+          passes = 2;
+          size = 2;
+          xray = true;
+          special = true;
+        };
       };
       dwindle = {
         pseudotile = true;
